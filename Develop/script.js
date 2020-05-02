@@ -10,57 +10,69 @@ let m = moment();
 
 // using a format
 //m = moment("05/01/2019 6:55PM", "MM/DD/YYYY h:mmA");
-console.log(m.toString());
-//getting units
-console.log(m.minutes());
-console.log(m.hour());
-console.log(m.week());
-console.log(m.get("quarter"));
+// console.log(m.toString());
+// //getting units
+// console.log(m.minutes());
+// console.log(m.hour());
+// console.log(m.week());
+// console.log(m.get("quarter"));
 var current = m.toString();
 $("#currentDay").text(current);
-console.log(current);
+//console.log(current);
 
 //var h = m.hour(9);
 
 //setting units m.minutes(52);
 
 var currentHour = m.hour();
-console.log(currentHour);
+//console.log(currentHour);
 
 //color code each block, dynamic
 
-var element = document.querySelector("time-block");
-
-// style = window.getComputedStyle(element),
-// top = style.getPropertyValue('top');
 
 //set hour for each column to compare time to
 
-var h9 = $("#nineAM");
-h9 = 9;
-console.log(h9);
-var planHour = $(".hour");
+// var h9 = $("#nineAM");
+// h9 = 9;
+// console.log(h9);
+//var planHour = $(".hour");
 
-if (currentHour < h9) {
+// if (currentHour < h9) {
 
 
-    $("#nineAM").addClass("future");
+//     $("#nineAM").addClass("future");
 
-} else if (currentHour === h9) {
-    $("#nineAM").addClass("present");
+// } else if (currentHour === h9) {
+//     $("#nineAM").addClass("present");
+// }
+// else
+//     $("#nineAM").addClass("past");
+
+// console.log("no");
+
+// var h10 = $("#tenAM");
+// h10 = 10;
+// if (currentHour < h10) {
+//     $("#tenAM").addClass("future");
+// }
+
+for (var i = 9; i < 11; i++) {
+    var x = $("#" + i);
+
+    var hour = parseInt($(x).attr("data-hour"));
+    console.log(hour);
+
+    if (hour < currentHour) {
+        $(x).addClass("past");
+    }
+    else if (currentHour === hour) {
+        $(x).addClass("present");
+    }
+    else if (hour > currentHour) {
+        $(x).addClass("future");
+    }
 }
-else
-    $("#nineAM").addClass("past");
-
-console.log("no");
-
-var h10 = $("#tenAM");
-h10 = 10;
-if (currentHour < h10) {
-    $("#tenAM").addClass("future");
-}
-
-
+console.log(currentHour);
 
 //eventlistener (onclick) for each timeblock
 
