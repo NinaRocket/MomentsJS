@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-color: rgb(213, 242, 248);
 }
 
 textarea{
@@ -23,11 +24,13 @@ textarea{
 
 .description{
   white-space: pre-wrap;
+  
 }
 
 .time-block{
   text-align: center;
   border-radius: 15px;
+  width: 80%
 }
 
 .row {
@@ -40,6 +43,9 @@ textarea{
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  width: 10%; 
+  text-align: end; 
+  padding-right: 5px; 
 }
 
 .past {
@@ -63,9 +69,19 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
+  width: 10%;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+/* .fa-save{
+
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  height: 100px;
+line-height: 100px;
+
+} */

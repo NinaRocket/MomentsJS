@@ -1,11 +1,37 @@
 //when user goes to website, a planner is displayed with the CURRENT day on top
-//--> moment.js to create and display calendar
-//create table/grid layout to format calendar look
-console.log(moments());
 
-//blocks run from 9am to 5pm
+//create table/grid layout to format calendar look
+
+//curent date and time
+let m = moment();
+
+//console.log("toString() => ${ m.toString() }");
+//m.set("day", 4);
+
+// using a format
+//m = moment("05/01/2019 6:55PM", "MM/DD/YYYY h:mmA");
+console.log(m.toString());
+//getting units
+console.log(m.minutes());
+console.log(m.hour());
+console.log(m.week());
+console.log(m.get("quarter"));
+var current = m.toString();
+$("#currentDay").text(current);
+console.log(current);
+
+
+//setting units m.minutes(52);
+
+
 
 //color code each block, dynamic
+
+// var r = $("row");
+// r.addClass("row");
+// var planRow = $("row").append(r);
+// $("container").append(planRow);
+
 
 //eventlistener (onclick) for each timeblock
 
