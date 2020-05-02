@@ -1,7 +1,7 @@
 //when user goes to website, a planner is displayed with the CURRENT day on top
 //--> moment.js to create and display calendar
 //create table/grid layout to format calendar look
-   
+console.log(moment());
 
 //blocks run from 9am to 5pm
 
