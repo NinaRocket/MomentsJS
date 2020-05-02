@@ -25,42 +25,11 @@ $("#currentDay").text(current);
 //setting units m.minutes(52);
 
 var currentHour = m.hour();
-//console.log(currentHour);
-
-//color code each block, dynamic
-
-
-//set hour for each column to compare time to
-
-// var h9 = $("#nineAM");
-// h9 = 9;
-// console.log(h9);
-//var planHour = $(".hour");
-
-// if (currentHour < h9) {
-
-
-//     $("#nineAM").addClass("future");
-
-// } else if (currentHour === h9) {
-//     $("#nineAM").addClass("present");
-// }
-// else
-//     $("#nineAM").addClass("past");
-
-// console.log("no");
-
-// var h10 = $("#tenAM");
-// h10 = 10;
-// if (currentHour < h10) {
-//     $("#tenAM").addClass("future");
-// }
-
-for (var i = 9; i < 11; i++) {
+//loops through rows to compare times for block color
+for (var i = 9; i < 18; i++) {
     var x = $("#" + i);
 
     var hour = parseInt($(x).attr("data-hour"));
-    console.log(hour);
 
     if (hour < currentHour) {
         $(x).addClass("past");
@@ -74,9 +43,9 @@ for (var i = 9; i < 11; i++) {
 }
 console.log(currentHour);
 
-//eventlistener (onclick) for each timeblock
+//eventlistener (onclick) for save button 
 
-//user can enter an event, take input (form? text area?)
+
 
 //save button, save event to local storate
 
