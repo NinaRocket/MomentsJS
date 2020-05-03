@@ -4,3 +4,4 @@ This web application allows a user to store meetings and events for their day. T
 
 Events that have past are gray, events that are occurring in the present are red, events that are in the future are green.
 
+![](Assets/work%20day.png)

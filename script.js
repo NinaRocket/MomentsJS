@@ -1,12 +1,4 @@
-//when user goes to website, a planner is displayed with the CURRENT day on top
-
-//create table/grid layout to format calendar look
-
-//we want it to stick when the user refreshes the page
-
-//how are we going to do that?
-//timer to call persist to 
-
+//function to get the stored items to keep them on the page after refreshing
 function persist() {
 
 
@@ -16,7 +8,7 @@ function persist() {
         $("#text-" + i).val(z);
     }
 }
-//console.log(z);
+
 
 
 //curent date and time
@@ -24,7 +16,7 @@ let m = moment();
 var dayDate = m.format('MMMM Do YYYY');
 var dayNum = m.day();
 var dayString = m.day(dayNum).format("dddd");
-
+//display day of week and date on page
 $("#currentDay").text(dayString + " " + dayDate);
 
 
@@ -45,9 +37,6 @@ for (var i = 9; i < 18; i++) {
         $(x).addClass("future");
     }
 }
-console.log(currentHour);
-
-
 
 
 //eventlistener (onclick) for save button //save button, save event to local storate
@@ -63,7 +52,6 @@ $(".saveBtn").on("click", function (event) {
     }
 
 });
-
 
 persist();
 
