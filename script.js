@@ -2,6 +2,23 @@
 
 //create table/grid layout to format calendar look
 
+//we want it to stick when the user refreshes the page
+
+//how are we going to do that?
+//timer to call persist to 
+
+function persist() {
+
+
+    for (var i = 9; i < 18; i++) {
+        y = $("#text-" + i);
+        z = localStorage.getItem(i);
+        $("#text-" + i).val(z);
+    }
+}
+//console.log(z);
+
+
 //curent date and time
 let m = moment();
 
@@ -44,32 +61,23 @@ for (var i = 9; i < 18; i++) {
 console.log(currentHour);
 
 
-//input into textarea
-// $("#plans").submit(function (event) {
-//     event.preventDefault();
-//     //var eventData = $("textarea");3
-//     localStorage.setItem("#plans");
-
-//     console.log("your mom");
-// });
 
 
 //eventlistener (onclick) for save button //save button, save event to local storate
 $(".saveBtn").on("click", function (event) {
     //prevent default so when page is refreshed the event remains
-    //event.preventDefault();
+    event.preventDefault();
 
-    var text = $("#plansText").val();
-    //var text = document.getElementById("plansText");
-    //text.value = localStorage.getItem("plansText");
+    for (var i = 9; i < 18; i++) {
+        var textID = $("#text-" + i);
+        var text = $("#text-" + i).val();
+        var time = i;
+        textID = localStorage.setItem(time, text);
+    }
 
-    localStorage.setItem("plansText", text);
-
-
-    console.log(text);
 });
 
 
-
+persist();
 
 
