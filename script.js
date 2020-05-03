@@ -9,8 +9,6 @@ function persist() {
     }
 }
 
-
-
 //curent date and time
 let m = moment();
 var dayDate = m.format('MMMM Do YYYY');
