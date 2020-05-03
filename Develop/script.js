@@ -43,10 +43,33 @@ for (var i = 9; i < 18; i++) {
 }
 console.log(currentHour);
 
-//eventlistener (onclick) for save button 
+
+//input into textarea
+// $("#plans").submit(function (event) {
+//     event.preventDefault();
+//     //var eventData = $("textarea");3
+//     localStorage.setItem("#plans");
+
+//     console.log("your mom");
+// });
+
+
+//eventlistener (onclick) for save button //save button, save event to local storate
+$(".saveBtn").on("click", function (event) {
+    //prevent default so when page is refreshed the event remains
+    //event.preventDefault();
+
+    var text = $("#plansText").val();
+    //var text = document.getElementById("plansText");
+    //text.value = localStorage.getItem("plansText");
+
+    localStorage.setItem("plansText", text);
+
+
+    console.log(text);
+});
 
 
 
-//save button, save event to local storate
 
-//prevent default so when page is refreshed the event remains
+
