@@ -3,9 +3,10 @@ function persist() {
 
 
     for (var i = 9; i < 18; i++) {
-        y = $("#text-" + i);
-        z = localStorage.getItem(i);
-        $("#text-" + i).val(z);
+        //grabbing the info by the text id plus # which correlates to time
+        rowTime = $("#text-" + i);
+        savedMeeting = localStorage.getItem(i);
+        rowTime.val(savedMeeting);
     }
 }
 
@@ -21,18 +22,19 @@ $("#currentDay").text(dayString + " " + dayDate);
 var currentHour = m.hour();
 //loops through rows to compare times for block color
 for (var i = 9; i < 18; i++) {
-    var x = $("#" + i);
+    //variable for id# which correlates to time
+    var hourID = $("#" + i);
 
-    var hour = parseInt($(x).attr("data-hour"));
+    var hour = parseInt($(hourID).attr("data-hour"));
 
     if (hour < currentHour) {
-        $(x).addClass("past");
+        $(hourID).addClass("past");
     }
     else if (currentHour === hour) {
-        $(x).addClass("present");
+        $(hourID).addClass("present");
     }
     else if (hour > currentHour) {
-        $(x).addClass("future");
+        $(hourID).addClass("future");
     }
 }
 
